@@ -10,3 +10,4 @@ function describeValue(value) {
 // Answer 2
 
 
+//  answer 1 is done!
