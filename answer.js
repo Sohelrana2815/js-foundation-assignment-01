@@ -54,3 +54,33 @@ function validateUsername(username) {
     return "Available";
   }
 }
+
+// Answer 4
+
+function getCngFare(distance, isNight = false, waitingMinutes = 0) {
+  let total = 0;
+  const normalCngFare = 50;
+  if (distance <= 0) {
+    return "Invalid distance input";
+  }
+
+  if (distance <= 2) {
+    total = normalCngFare;
+  } else {
+    const extraDistance = distance - 2;
+    total = normalCngFare + extraDistance * 15;
+  }
+
+  // Waiting charge
+
+  total += waitingMinutes * 2;
+
+  // Night charge
+
+  if (isNight) {
+    total += total * 0.2;
+  }
+
+  return total;
+}
+
